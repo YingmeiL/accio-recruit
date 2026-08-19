@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accio 招聘专场 ｜ 让 AI 真正参与全球生意</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=ZCOOL+KuaiLe&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg0:#07100c;
+  --bg1:#0b1712;
+  --card:#0f1d17;
+  --card2:#12241c;
+  --line:#1e3a2e;
+  --mint:#2ce5a7;
+  --mint-dk:#0b7a5c;
+  --mint-soft:rgba(44,229,167,.12);
+  --sky:#8fd8ff;
+  --skyband:#dff3ff;
+  --gold:#ffcf5c;
+  --blue:#4d8dff;
+  --coral:#ff7a59;
+  --text:#eef7f2;
+  --muted:#9cb8ab;
+  --px:'Press Start 2P',monospace;
+  --fun:'ZCOOL KuaiLe','Noto Sans SC',sans-serif;
+  --body:'Noto Sans SC',-apple-system,'PingFang SC',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg0);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.75;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block;image-rendering:pixelated}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+
+/* ============ 顶部像素天空跑马灯 ============ */
+.skyband{background:var(--skyband);color:#0b3a63;overflow:hidden;position:relative;border-bottom:3px solid #0b1a14}
+.skyband .clouds{position:absolute;inset:0;background:
+  radial-gradient(14px 8px at 8% 70%, #fff 96%, transparent),
+  radial-gradient(20px 10px at 26% 30%, #fff 96%, transparent),
+  radial-gradient(16px 9px at 55% 75%, #fff 96%, transparent),
+  radial-gradient(22px 11px at 78% 25%, #fff 96%, transparent),
+  radial-gradient(14px 8px at 93% 65%, #fff 96%, transparent);
+  opacity:.9}
+.marquee{position:relative;display:flex;width:max-content;animation:mq 26s linear infinite;padding:9px 0}
+.marquee span{font-family:var(--fun);font-size:15px;letter-spacing:1px;padding:0 18px;white-space:nowrap}
+.marquee b{font-family:var(--px);font-size:11px;color:#0b7a5c;vertical-align:1px}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ============ 导航 ============ */
+nav{position:sticky;top:0;z-index:50;background:rgba(7,16,12,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;gap:26px;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:20px;letter-spacing:.5px}
+.logo .badge{font-family:var(--fun);font-size:13px;color:#062018;background:var(--mint);padding:2px 10px;border-radius:6px;box-shadow:3px 3px 0 rgba(44,229,167,.25)}
+.nav-links{display:flex;gap:22px;margin-left:auto;font-size:14px;color:var(--muted)}
+.nav-links a{position:relative;padding:4px 0;transition:color .2s}
+.nav-links a:hover{color:var(--mint)}
+.nav-cta{font-family:var(--fun);font-size:15px;background:var(--mint);color:#062018;padding:8px 18px;border-radius:10px;box-shadow:4px 4px 0 rgba(44,229,167,.28);transition:transform .15s,box-shadow .15s}
+.nav-cta:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 rgba(44,229,167,.35)}
+@media(max-width:900px){.nav-links{display:none}}
+
+/* ============ Hero ============ */
+.hero{position:relative;padding:88px 0 64px;background:
+  radial-gradient(900px 420px at 85% -10%, rgba(44,229,167,.10), transparent 60%),
+  radial-gradient(700px 380px at -10% 30%, rgba(77,141,255,.08), transparent 60%),
+  var(--bg0)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.eyebrow{font-family:var(--px);font-size:11px;color:var(--mint);letter-spacing:2px;display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:10px;height:10px;background:var(--mint);box-shadow:14px 0 0 var(--gold);margin-right:14px}
+h1{font-size:clamp(34px,4.6vw,58px);font-weight:900;line-height:1.22;margin:22px 0 20px;letter-spacing:1px}
+h1 .hl{color:var(--mint);position:relative;white-space:nowrap}
+h1 .hl::after{content:"";position:absolute;left:0;right:0;bottom:6px;height:12px;background:rgba(44,229,167,.18);z-index:-1}
+.hero-sub{color:var(--muted);font-size:16.5px;max-width:560px}
+.hero-sub b{color:var(--text)}
+.cta-row{display:flex;gap:16px;margin:30px 0 8px;flex-wrap:wrap}
+.btn{font-family:var(--fun);font-size:17px;padding:12px 26px;border-radius:12px;transition:transform .15s,box-shadow .15s;display:inline-flex;align-items:center;gap:8px}
+.btn-mint{background:var(--mint);color:#062018;box-shadow:5px 5px 0 rgba(44,229,167,.28)}
+.btn-ghost{border:2px solid var(--line);color:var(--text);background:rgba(255,255,255,.02)}
+.btn:hover{transform:translate(-2px,-2px)}
+.btn-mint:hover{box-shadow:7px 7px 0 rgba(44,229,167,.35)}
+.btn-ghost:hover{border-color:var(--mint);color:var(--mint)}
+
+.hero-art{position:relative}
+.hero-art .frame{border:3px solid var(--line);border-radius:18px;overflow:hidden;position:relative;box-shadow:10px 10px 0 rgba(44,229,167,.14)}
+.hero-art .frame::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.14) 0 2px,transparent 2px 4px);pointer-events:none;mix-blend-mode:overlay}
+.hero-art img{width:100%;animation:breathe 6s ease-in-out infinite}
+@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
+.sprite{position:absolute;font-family:var(--px);animation:float 4s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+/* 终端小窗 */
+.term{position:absolute;left:-34px;bottom:-40px;width:min(400px,86%);background:#0a1410;border:2px solid var(--mint-dk);border-radius:14px;box-shadow:8px 8px 0 rgba(0,0,0,.45);overflow:hidden;z-index:3}
+.term-bar{display:flex;gap:6px;padding:9px 12px;background:#0f2018;border-bottom:1px solid var(--line)}
+.term-bar i{width:10px;height:10px;border-radius:2px}
+.term-bar i:nth-child(1){background:var(--coral)}
+.term-bar i:nth-child(2){background:var(--gold)}
+.term-bar i:nth-child(3){background:var(--mint)}
+.term-bar span{font-family:var(--px);font-size:8px;color:var(--muted);margin-left:8px;letter-spacing:1px}
+.term-body{padding:14px 16px;font-family:var(--px);font-size:9.5px;line-height:2.1;color:var(--mint);min-height:132px;white-space:pre-wrap}
+.term-body .dim{color:var(--muted)}
+.term-body .gold{color:var(--gold)}
+.cursor{display:inline-block;width:8px;height:12px;background:var(--mint);vertical-align:-2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* 数据带 */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:96px}
+.stat{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:22px 20px;position:relative;overflow:hidden;transition:transform .2s,border-color .2s}
+.stat:hover{transform:translateY(-4px);border-color:var(--mint-dk)}
+.stat .num{font-family:var(--px);font-size:clamp(18px,2.2vw,26px);color:var(--mint)}
+.stat:nth-child(2) .num{color:var(--sky)}
+.stat:nth-child(3) .num{color:var(--gold)}
+.stat:nth-child(4) .num{color:var(--coral)}
+.stat .lab{color:var(--muted);font-size:13.5px;margin-top:8px}
+.stat::after{content:"";position:absolute;right:-14px;bottom:-14px;width:56px;height:56px;background:var(--mint-soft);transform:rotate(45deg)}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.term{left:0}}
+
+/* ============ 通用 section ============ */
+section{padding:96px 0;position:relative}
+section.alt{background:var(--bg1)}
+.teeth{height:10px;background:repeating-linear-gradient(90deg,var(--mint) 0 10px,transparent 10px 20px);opacity:.5}
+.sec-head{max-width:760px;margin-bottom:48px}
+h2{font-size:clamp(26px,3.2vw,40px);font-weight:900;line-height:1.3;margin:16px 0 14px;letter-spacing:.5px}
+.lead{color:var(--muted);font-size:16px}
+.lead b{color:var(--text)}
+.tag{display:inline-block;font-family:var(--fun);font-size:13.5px;padding:3px 12px;border-radius:8px;background:var(--mint-soft);color:var(--mint);border:1px solid rgba(44,229,167,.35)}
+.tag.gold{background:rgba(255,207,92,.12);color:var(--gold);border-color:rgba(255,207,92,.35)}
+.tag.sky{background:rgba(143,216,255,.10);color:var(--sky);border-color:rgba(143,216,255,.35)}
+
+/* 卡片 */
+.card{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:26px;transition:transform .2s,box-shadow .2s,border-color .2s;position:relative}
+.card:hover{transform:translate(-3px,-3px);box-shadow:7px 7px 0 rgba(44,229,167,.16);border-color:var(--mint-dk)}
+.card h3{font-size:18px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.card p{color:var(--muted);font-size:14.5px}
+.card p b{color:var(--text)}
+.px-ic{width:34px;height:34px;flex:none}
+
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media(max-width:960px){.grid3{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}.grid4{grid-template-columns:repeat(2,1fr)}}
+
+/* 三张认知卡 */
+.know .card{border-top:6px solid var(--mint)}
+.know .card:nth-child(2){border-top-color:var(--sky)}
+.know .card:nth-child(3){border-top-color:var(--gold)}
+.know .k{font-family:var(--px);font-size:9px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:12px}
+
+/* 业务背景亮色面板 */
+.bizbg{margin-top:8px;background:var(--skyband);color:#0b3a63;border:3px solid #0b1a14;border-radius:18px;box-shadow:10px 10px 0 rgba(143,216,255,.16);padding:34px 38px;position:relative;overflow:hidden}
+.bizbg::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(16px 9px at 6% 18%, #fff 96%, transparent),
+  radial-gradient(22px 11px at 88% 12%, #fff 96%, transparent),
+  radial-gradient(14px 8px at 70% 85%, #fff 96%, transparent);opacity:.8;pointer-events:none}
+.bizbg .bb-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:34px;position:relative;align-items:center}
+.bizbg .b-k{font-family:var(--px);font-size:9px;color:#0b7a5c;letter-spacing:1px;display:block;margin-bottom:12px}
+.bizbg h3{font-size:clamp(19px,2.2vw,24px);font-weight:900;color:#0b3a63;margin-bottom:10px}
+.bizbg p{color:#33608c;font-size:14.5px}
+.bizbg p b{color:#0b3a63}
+.bb-nums{display:flex;gap:30px;justify-content:flex-end;flex-wrap:wrap}
+.bb-num .n{font-family:var(--px);font-size:clamp(16px,1.9vw,22px);color:#0b7a5c}
+.bb-num:nth-child(2) .n{color:#2563eb}
+.bb-num:nth-child(3) .n{color:#d97706}
+.bb-num .l{font-size:12.5px;color:#33608c;margin-top:6px}
+.bb-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;position:relative}
+.bb-chips .lab{width:100%;font-family:var(--fun);font-size:15.5px;color:#0b3a63;margin-bottom:2px}
+.bb-chips span:not(.lab){font-size:13px;padding:6px 15px;border-radius:999px;background:#fff;border:2px solid #bcd9f2;color:#0b558c;transition:.2s;cursor:default}
+.bb-chips span:not(.lab):hover{border-color:#0b7a5c;color:#0b7a5c;transform:translateY(-3px) rotate(-1deg)}
+@media(max-width:860px){.bizbg .bb-grid{grid-template-columns:1fr}.bb-nums{justify-content:flex-start}}
+
+/* 对比卡 */
+.vs{display:grid;grid-template-columns:1fr 60px 1fr;gap:0;align-items:stretch}
+.vs .side{border-radius:16px;padding:28px;border:2px solid var(--line)}
+.vs .old{background:#10161385;border-color:#26332c}
+.vs .new{background:linear-gradient(180deg,rgba(44,229,167,.10),rgba(44,229,167,.03));border-color:var(--mint-dk)}
+.vs .mid{display:flex;align-items:center;justify-content:center;font-family:var(--px);font-size:14px;color:var(--gold)}
+.vs li{list-style:none;padding:12px 0;border-bottom:1px dashed #2a3f35;font-size:14.5px;color:var(--muted);display:flex;gap:10px}
+.vs li:last-child{border-bottom:none}
+.vs .new li{color:#cfeee0}
+.vs li::before{content:"▪";color:var(--coral)}
+.vs .new li::before{content:"✦";color:var(--mint)}
+.vs h3{font-size:17px;margin-bottom:8px}
+.vs .old h3{color:var(--muted)}
+.vs .new h3{color:var(--mint)}
+@media(max-width:860px){.vs{grid-template-columns:1fr}.vs .mid{transform:rotate(90deg);padding:6px 0}}
+
+/* 技术方向 */
+.tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tech-grid .card:nth-child(7){grid-column:2/3}
+@media(max-width:960px){.tech-grid{grid-template-columns:1fr}.tech-grid .card:nth-child(7){grid-column:auto}}
+.conf-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;align-items:center}
+.conf{font-family:var(--px);font-size:10px;padding:10px 16px;border-radius:10px;border:2px solid var(--line);color:var(--sky);background:var(--card);transition:.2s}
+.conf:hover{border-color:var(--sky);transform:translateY(-3px)}
+
+/* 四优势 */
+.adv{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:56px}
+.adv .card{padding:22px}
+.adv .n{font-family:var(--px);font-size:20px;color:var(--gold)}
+.adv .card:nth-child(2) .n{color:var(--mint)}
+.adv .card:nth-child(3) .n{color:var(--sky)}
+.adv .card:nth-child(4) .n{color:var(--coral)}
+@media(max-width:960px){.adv{grid-template-columns:1fr 1fr}}
+
+/* 闭环 */
+.loop{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px;counter-reset:step}
+.loop .st{position:relative;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:22px 18px 18px}
+.loop .st::after{content:"▶";position:absolute;right:-13px;top:50%;transform:translateY(-50%);color:var(--mint);font-size:12px;z-index:2}
+.loop .st:last-child::after{content:""}
+.loop .st i{font-family:var(--px);font-style:normal;font-size:10px;color:var(--mint);display:block;margin-bottom:10px}
+.loop .st h4{font-size:15px;margin-bottom:6px}
+.loop .st p{font-size:13px;color:var(--muted)}
+@media(max-width:960px){.loop{grid-template-columns:1fr}.loop .st::after{content:"▼";right:50%;top:auto;bottom:-15px;transform:translateX(50%)}}
+
+/* 团队 */
+.world{position:relative;border:3px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:10px 10px 0 rgba(77,141,255,.12)}
+.world img{width:100%}
+.world .pin{position:absolute;font-family:var(--px);font-size:10px;padding:8px 12px;border-radius:8px;background:#0a1410;border:2px solid var(--mint);color:var(--mint);box-shadow:4px 4px 0 rgba(0,0,0,.4);animation:float 5s ease-in-out infinite}
+.world .pin.hz{left:6%;bottom:14%}
+.world .pin.sv{right:5%;bottom:16%;border-color:var(--gold);color:var(--gold);animation-delay:1.2s}
+.culture{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.culture span{font-family:var(--fun);font-size:16px;padding:8px 20px;border-radius:12px;background:var(--card);border:2px solid var(--line);transition:.2s}
+.culture span:hover{border-color:var(--mint);color:var(--mint);transform:translateY(-3px) rotate(-1deg)}
+
+/* why */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:960px){.why-grid{grid-template-columns:1fr}}
+.why-grid .card h3 .e{font-family:var(--px);font-size:9px;color:var(--muted);display:block;margin-bottom:6px;letter-spacing:1px}
+
+/* 论文 */
+.papers{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:860px){.papers{grid-template-columns:1fr}}
+.paper{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:2px solid var(--line);border-radius:12px;padding:16px 18px;transition:.2s}
+.paper:hover{border-color:var(--sky);transform:translateX(4px)}
+.paper .t{font-family:var(--px);font-size:9px;color:var(--gold);padding-top:3px;flex:none}
+.paper h4{font-size:14px;font-weight:500;line-height:1.55}
+.paper a{color:var(--sky);font-size:12px;font-family:var(--px)}
+.oss{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:22px}
+@media(max-width:860px){.oss{grid-template-columns:1fr}}
+.oss .card{border-color:var(--mint-dk);background:linear-gradient(180deg,rgba(44,229,167,.08),transparent)}
+
+/* 岗位 */
+.job{display:flex;align-items:center;gap:18px;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:20px 24px;margin-bottom:14px;transition:.2s;flex-wrap:wrap}
+.job:hover{border-color:var(--mint);transform:translateX(6px);box-shadow:-6px 6px 0 rgba(44,229,167,.15)}
+.job .idx{font-family:var(--px);font-size:12px;color:var(--gold)}
+.job h3{font-size:16px;font-weight:700;flex:1;min-width:260px}
+.job .go{font-family:var(--px);font-size:10px;color:#062018;background:var(--mint);padding:9px 16px;border-radius:10px;box-shadow:3px 3px 0 rgba(44,229,167,.3);transition:.15s}
+.job:hover .go{transform:translate(-2px,-2px);box-shadow:5px 5px 0 rgba(44,229,167,.4)}
+
+/* footer */
+footer{padding:110px 0 60px;text-align:center;position:relative;overflow:hidden;background:
+  radial-gradient(700px 300px at 50% 110%, rgba(44,229,167,.14), transparent 70%),var(--bg0)}
+footer h2{font-size:clamp(28px,4vw,46px)}
+footer .sub{color:var(--muted);margin:14px 0 34px}
+footer .fine{margin-top:56px;color:#5c7468;font-size:12.5px}
+footer .fine a{color:var(--mint)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.rv.on{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}.d5{transition-delay:.4s}.d6{transition-delay:.48s}
+
+/* 漂浮像素装饰 */
+.deco{position:absolute;pointer-events:none;opacity:.85}
+</style>
+</head>
+<body>
+
+<!-- 天空跑马灯 -->
+<div class="skyband">
+  <div class="clouds"></div>
+  <div class="marquee" id="mq">
+    <span><b>WE'RE HIRING</b> ✦ Accio 人才招聘进行中 ✦ 杭州 · Sunnyvale 双基地 ✦ 让 AI 真正去做全球生意 ✦ 全球首个 B2B AI 原生应用 ✦</span>
+  </div>
+</div>
+
+<!-- 导航 -->
+<nav>
+  <div class="wrap nav-in">
+    <a class="logo" href="#top">
+      <svg width="26" height="26" viewBox="0 0 8 8" shape-rendering="crispEdges"><rect x="3" y="0" width="2" height="1" fill="#2ce5a7"/><rect x="2" y="1" width="1" height="1" fill="#2ce5a7"/><rect x="5" y="1" width="1" height="1" fill="#2ce5a7"/><rect x="1" y="2" width="1" height="1" fill="#2ce5a7"/><rect x="6" y="2" width="1" height="1" fill="#2ce5a7"/><rect x="1" y="3" width="1" height="1" fill="#2ce5a7"/><rect x="3" y="3" width="2" height="1" fill="#8fd8ff"/><rect x="6" y="3" width="1" height="1" fill="#2ce5a7"/><rect x="0" y="4" width="1" height="1" fill="#2ce5a7"/><rect x="7" y="4" width="1" height="1" fill="#2ce5a7"/><rect x="0" y="5" width="8" height="1" fill="#2ce5a7"/></svg>
+      Accio <span class="badge">招聘专场</span>
+    </a>
+    <div class="nav-links">
+      <a href="#biz">业务世界</a><a href="#product">产品全景</a><a href="#tech">技术方向</a><a href="#team">团队</a><a href="#research">论文开源</a><a href="#jobs">在招岗位</a>
+    </div>
+    <a class="nav-cta" href="#jobs">投简历 →</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">ACCIO · AI AGENT · HIRING</span>
+        <h1>别让 AI 只会聊天，<br><span class="hl">让它去做全球生意。</span></h1>
+        <p class="hero-sub">我们是 <b>Accio</b>——第一个在 B2B 电商领域诞生的 AI Agent。用户说一句目标，Agent 自己研究、自己找品找商、自己比价，甚至自己打开浏览器把任务往前推。<b>这片蓝海，我们已经先迈进来一步</b>，现在等你一起往下扎。</p>
+        <div class="cta-row">
+          <a class="btn btn-mint" href="#jobs">查看在招岗位 ↓</a>
+          <a class="btn btn-ghost" href="#biz">先认识一下 Accio</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="frame"><img src="accio_hero_pixel.png" alt="像素机器人站在地球上举起金色星星"></div>
+        <div class="term">
+          <div class="term-bar"><i></i><i></i><i></i><span>accio_agent.exe</span></div>
+          <div class="term-body" id="term"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat rv"><div class="num"><span data-n="200">0</span>+</div><div class="lab">覆盖国家和地区</div></div>
+      <div class="stat rv d1"><div class="num"><span data-n="4000">0</span>万+</div><div class="lab">活跃企业买家</div></div>
+      <div class="stat rv d2"><div class="num"><span data-n="10">0</span>亿+</div><div class="lab">商品多模态检索</div></div>
+      <div class="stat rv d3"><div class="num"><span data-n="7">0</span></div><div class="lab">种主流语言支持</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="teeth"></div>
+
+<!-- 一句话认识 -->
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">00 · MEET ACCIO</span>
+      <h2>三句话，认识 Accio</h2>
+    </div>
+    <div class="grid3 know">
+      <div class="card rv"><span class="k">ONE-LINER</span><h3>一句话认识 Accio</h3><p>面向真实业务场景的 <b>AI Native 产品与 Agent 平台</b>：你用自然语言说出目标，Agent 自主研究、调用工具、处理数据，把任务一路推进到完成。</p></div>
+      <div class="card rv d1"><span class="k">BUSINESS SOIL</span><h3>核心业务土壤</h3><p>扎根 <b>Alibaba.com 全球 B2B 跨境贸易</b>：选品、供应商筛选、比价、谈判建议、店铺经营——专挑高复杂度的活儿交给 AI。</p></div>
+      <div class="card rv d2"><span class="k">TECH THESIS</span><h3>核心技术命题</h3><p>把大模型从<b>“能回答”</b>推进到<b>“能研究、能规划、能调用工具、能长期执行、能在真实结果中迭代”</b>。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 一、业务世界 -->
+<section id="biz">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">01 · BUSINESS WORLD</span>
+      <h2>我们解决的问题，确实很棘手</h2>
+      <p class="lead">Accio 不是凭空长出来的——它站在<b>几十年全球 B2B 贸易的积累</b>上。信息散落在各个平台，流程藏在每个人的脑子里；我们要做的，是把这些复杂工作<b>组织成 AI 能理解、能执行、能持续推进的工作流</b>。<span class="tag sky">2024 年 11 月推出</span> <span class="tag">全球首个 B2B AI 原生应用</span></p>
+    </div>
+
+    <div class="bizbg rv">
+      <div class="bb-grid">
+        <div>
+          <span class="b-k">BUSINESS BACKGROUND · 业务背景</span>
+          <h3>站在 Alibaba.com 的全球 B2B 贸易上</h3>
+          <p>Alibaba.com 是<b>阿里巴巴集团的第一个业务板块</b>，天然带着全球 B2B 跨境电商的基因。Accio 的每一步，都踩在这片最真实、也最复杂的贸易土壤上。</p>
+        </div>
+        <div class="bb-nums">
+          <div class="bb-num"><div class="n">200+</div><div class="l">覆盖国家和地区</div></div>
+          <div class="bb-num"><div class="n">4000万+</div><div class="l">活跃企业买家</div></div>
+          <div class="bb-num"><div class="n">长期</div><div class="l">B2B 贸易积累</div></div>
+        </div>
+      </div>
+      <div class="bb-chips">
+        <span class="lab">对 AI 来说，这是一类天然高价值但高难度的场景——一次跨国采购，可能同时涉及：</span>
+        <span>多语言沟通</span><span>多模态理解</span><span>供应商评估</span><span>跨时区谈判</span><span>物流编排</span><span>跨境支付</span><span>合规审查</span><span>长期关系维护</span>
+      </div>
+    </div>
+
+    <div class="vs rv">
+      <div class="side old">
+        <h3>传统采购工作</h3>
+        <ul>
+          <li>人工搜索商品、供应商与行业信息，信息分散，反复整理。</li>
+          <li>跨平台联系供应商、跟进报价、比较条件，流程长、容易漏。</li>
+          <li>结果依赖个人经验，决策过程不透明、难复用。</li>
+        </ul>
+      </div>
+      <div class="mid">VS</div>
+      <div class="side new">
+        <h3>Accio 的 AI Native 方式</h3>
+        <ul>
+          <li>一句话描述需求，Agent 进行研究、检索、比较与归纳。</li>
+          <li>围绕目标组织多步任务，生成候选清单、比较表与下一步建议。</li>
+          <li>研究过程、数据、工具调用与结果，沉淀为可复用的工作流。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid3" style="margin-top:26px">
+      <div class="card rv"><h3><svg class="px-ic" data-px="globe"></svg>真实，是这里的第一性原则</h3><p>你面对的是<b>真实用户、真实交易链路、真实业务反馈</b>的 AI 场景，不是脱离业务的演示题。</p></div>
+      <div class="card rv d1"><h3><svg class="px-ic" data-px="chip"></svg>一个课题，牵一整条技术链</h3><p>同一个问题可能同时连接 <b>NLP、信息检索、计算机视觉、多模态、强化学习、Agent 与系统工程</b>。</p></div>
+      <div class="card rv d2"><h3><svg class="px-ic" data-px="loop"></svg>研究有回音</h3><p>模型效果由<b>产品指标、用户交互和商业结果</b>验证，研究与产品之间有清晰的反馈通路。</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="teeth"></div>
+
+<!-- 二、产品全景 -->
+<section id="product" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">02 · PRODUCT</span>
+      <h2>从“采购助手”，到执行型工作平台</h2>
+      <p class="lead">Accio 不止输出文字。它能<b>读取资料、调用工具、运行任务、操作浏览器</b>，在权限边界内持续完成工作。内置数百项实用技能，老板不懂技术，也能把生意跑起来——<b>一人跨国公司，来了。</b></p>
+    </div>
+
+    <div class="grid3">
+      <div class="card rv"><span class="tag">场景 A</span><h3 style="margin-top:12px"><svg class="px-ic" data-px="search"></svg>全球选品与供应商研究</h3><p>从一个想法出发研究市场、锁定机会；把报价单、发票整理成可比较的数据；筛选、比较供应商，给出谈判建议。我们正在把搜索引擎，升级成<b>采购决策引擎</b>。</p></div>
+      <div class="card rv d1"><span class="tag sky">场景 B</span><h3 style="margin-top:12px"><svg class="px-ic" data-px="shop"></svg>店铺创建与经营自动化</h3><p>用一句自然语言创建 Shopify 店铺，产品、内容、邮件一起安排好；报告、库存检查、数据更新按计划执行；国际站生意助手以插件接入同一工作流，<b>少切几个窗口</b>。</p></div>
+      <div class="card rv d2"><span class="tag gold">场景 C</span><h3 style="margin-top:12px"><svg class="px-ic" data-px="tool"></svg>从资料到工具与结果</h3><p>读取本地文件提取报价与报告；现场造一个计算器或分析工具；浏览器搜网页、填表单、截图推进多步流程；用<b>技能、MCP 和第三方连接器</b>扩展能力边界。</p></div>
+    </div>
+
+    <div class="vs rv" style="margin-top:26px">
+      <div class="side old">
+        <h3>普通聊天工具</h3>
+        <ul>
+          <li>主要提供文字回答，搜索、整理、操作还得你自己来。</li>
+          <li>能力边界固定，工作流靠手动串联。</li>
+          <li>结果通常停留在单次会话。</li>
+        </ul>
+      </div>
+      <div class="mid">→</div>
+      <div class="side new">
+        <h3>Accio Work 的产品方向</h3>
+        <ul>
+          <li>面向目标交付：研究信息、处理文件、创建工具、操作浏览器。</li>
+          <li>Agent、技能、MCP、团队协作与自动化，组合出可复用工作流。</li>
+          <li>支持定时任务、持续更新、主动跟进和多 Agent 协作。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 三、技术方向 -->
+<section id="tech">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">03 · TECH STACK</span>
+      <h2>在真实复杂度里，做 Agent 与大模型</h2>
+      <p class="lead">这里有一套<b>“研究前沿 + 产品验证 + 商业闭环”</b>的技术环境：从模型训练到系统执行，从离线评测到线上反馈，一条链路看完。</p>
+    </div>
+
+    <div class="tech-grid">
+      <div class="card rv"><h3><svg class="px-ic" data-px="robot"></svg>Agent 与长程任务</h3><p>复杂规划、多轮搜索、多工具协作、持续记忆，以及<b>可能持续数天</b>的异步谈判与供应商沟通。</p></div>
+      <div class="card rv d1"><h3><svg class="px-ic" data-px="search"></svg>搜索与深度研究</h3><p>跨语言、跨平台检索供应商资质、产品参数和行业法规，把多步推理与全网开放信息结合起来。</p></div>
+      <div class="card rv d2"><h3><svg class="px-ic" data-px="img"></svg>多模态与多语言</h3><p>理解文字、图片、视频、3D 与复杂结构化图片；图文混合检索，商品 / 供应商 / 制造商多意图搜索。</p></div>
+      <div class="card rv d1"><h3><svg class="px-ic" data-px="bolt"></svg>Agentic Post-training</h3><p>Agentic SFT、CPT、Reasoning RL、Agentic RL、RLHF / RLAIF，提升 <b>DeepResearch、Coding、Tool Use</b> 与长链路推理。</p></div>
+      <div class="card rv d2"><h3><svg class="px-ic" data-px="tool"></svg>强化学习与工具调用</h3><p>在异构 API 环境中做任务编排、纠错和执行；研究环境设计、奖励塑形与信用分配。</p></div>
+      <div class="card rv d3"><h3><svg class="px-ic" data-px="stack"></svg>AI Infra</h3><p>分布式训练、全球推理服务、Agentic RL 环境模拟器和数据流水线；吞吐、容错、缓存、量化与成本优化。</p></div>
+      <div class="card rv d4"><h3><svg class="px-ic" data-px="shield"></svg>安全与对齐</h3><p>应对 Prompt Injection、越权调用、目标偏移、数据外泄和未授权行动——<b>Agent 时代特有的风险</b>。</p></div>
+    </div>
+
+    <div class="adv">
+      <div class="card rv"><div class="n">01</div><h3>场景复杂度高</h3><p>200+ 国家和地区、数十种语言，图文视频 3D 多模态，品商制造商混合搜索。</p></div>
+      <div class="card rv d1"><div class="n">02</div><h3>工具生态丰富</h3><p>选品、物流、营销、支付、关务等异构工具，为 Tool-Use Agent 提供大规模训练与验证环境。</p></div>
+      <div class="card rv d2"><div class="n">03</div><h3>数据与商业闭环</h3><p>真实买家交互数据持续回流，Reward Signal 不只来自人工标注，一路连到交易完成端。</p></div>
+      <div class="card rv d3"><div class="n">04</div><h3>自研模型双轮驱动</h3><p>自研基模 <b>Cogito</b> 直接落地国际站与 Accio Work 业务线，模型能力在全球产品中快速验证。</p></div>
+    </div>
+
+    <div class="sec-head rv" style="margin-top:72px;margin-bottom:0">
+      <h2 style="font-size:clamp(20px,2.4vw,28px)">一个研究课题在这里的完整旅程</h2>
+    </div>
+    <div class="loop">
+      <div class="st rv"><i>STEP 1</i><h4>抽象课题</h4><p>从真实业务问题出发：长上下文压缩、跨语言搜索、异步长程任务、Agent 安全……</p></div>
+      <div class="st rv d1"><i>STEP 2</i><h4>搭建方案</h4><p>构建数据、环境、奖励、评测和模型训练方案。</p></div>
+      <div class="st rv d2"><i>STEP 3</i><h4>真实验证</h4><p>在真实工具与产品链路中，观察 Agent 是否正确规划、调用、纠错并完成目标。</p></div>
+      <div class="st rv d3"><i>STEP 4</i><h4>反馈迭代</h4><p>根据用户交互与业务结果迭代模型和系统，训练—评估—上线—反馈，循环往复。</p></div>
+    </div>
+
+    <div class="conf-row rv">
+      <span class="tag gold">研究方向横跨多个顶会领域</span>
+      <span class="conf">NeurIPS</span><span class="conf">ICML</span><span class="conf">CVPR</span><span class="conf">SIGIR</span><span class="conf">ACL</span>
+      <span class="tag sky">研究型岗位支持论文探索 · 顶会合作 · 导师带教</span>
+    </div>
+  </div>
+</section>
+
+<div class="teeth"></div>
+
+<!-- 四、团队 -->
+<section id="team" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">04 · TEAM</span>
+      <h2>双基地、跨角色，面向全球产品</h2>
+      <p class="lead">阿里国际站 AI Team 由两部分组成：<b>智能业务部</b>支撑 Alibaba.com 背后的算法业务；<b>Accio / Accio Work</b> 作为独立的 AI Native 产品与研发载体。团队分布在杭州与美国硅谷 Sunnyvale，面向亚太与北美协同工作。</p>
+    </div>
+
+    <div class="world rv">
+      <img src="accio_world_pixel.png" alt="杭州与 Sunnyvale 双基地像素夜景，航线连接">
+      <span class="pin hz">HANGZHOU · 杭州</span>
+      <span class="pin sv">SUNNYVALE · 硅谷</span>
+    </div>
+
+    <div class="grid3" style="margin-top:26px">
+      <div class="card rv"><span class="tag">杭州</span><h3 style="margin-top:12px">智能引擎与业务算法</h3><p>电商搜索、多模态生成、Agent 系统、广告与风控、商家侧 Agent 等场景落地。</p></div>
+      <div class="card rv d1"><span class="tag sky">杭州</span><h3 style="margin-top:12px">Accio / Accio Work</h3><p>Agentic RL、Agent Harness、Agentic Search、多模态后训练、Agent 模型后训练与长程任务。</p></div>
+      <div class="card rv d2"><span class="tag gold">Sunnyvale</span><h3 style="margin-top:12px">Accio Work / 模型研究</h3><p>面向全球产品的模型训练与 Post-training，覆盖 Mid-train / CPT、SFT、RL 等链路。</p></div>
+    </div>
+
+    <div class="culture rv">
+      <span>敢于处理复杂问题</span><span>重视技术深度</span><span>强调真实结果</span><span>鼓励研究探索</span><span>模型能力落到全球用户可感知的体验里</span>
+    </div>
+
+    <div class="grid3" style="margin-top:34px">
+      <div class="card rv"><h3><svg class="px-ic" data-px="star"></svg>问题来自产品目标</h3><p>面向全球用户和真实业务，问题定义通常来自产品目标，<b>而不是孤立的 benchmark</b>。</p></div>
+      <div class="card rv d1"><h3><svg class="px-ic" data-px="robot"></svg>多角色共解系统问题</h3><p>算法、模型、数据、基础设施、产品和安全一起上场，你能看到完整的上下游协作。</p></div>
+      <div class="card rv d2"><h3><svg class="px-ic" data-px="bolt"></svg>快速反馈与带教</h3><p>研究型岗位有导师带教、快速反馈和论文合作机会；双基地对应不同的市场与研究网络。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 五、为什么加入 -->
+<section id="why">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">05 · WHY ACCIO</span>
+      <h2>加入我们，你能得到什么</h2>
+    </div>
+    <div class="why-grid">
+      <div class="card rv"><h3><span class="e">IMPACT</span>想做有影响力的 AI</h3><p>你的模型迭代，可能直接影响全球买家的采购研究、供应商筛选与经营工作流。</p></div>
+      <div class="card rv d1"><h3><span class="e">REAL AGENT</span>想做真正的 Agent</h3><p>长程任务、多工具协作、浏览器操作、异步沟通、权限控制——真实的 Agent 难题都在这里。</p></div>
+      <div class="card rv d2"><h3><span class="e">RESEARCH × SHIP</span>想兼顾研究与落地</h3><p>研究课题可连接训练、评测、线上产品和商业反馈，不止停留在论文或离线指标。</p></div>
+      <div class="card rv d1"><h3><span class="e">BREADTH</span>想拓展技术宽度</h3><p>在搜索、多模态、RL、后训练、AI Infra、安全对齐与产品系统之间，建立交叉能力。</p></div>
+      <div class="card rv d2"><h3><span class="e">GLOBAL</span>想进入全球化团队</h3><p>杭州与 Sunnyvale 双基地协同，产品面对全球市场与跨语言场景。</p></div>
+      <div class="card rv d3"><h3><span class="e">LONG-TERM</span>想做长期价值的基础能力</h3><p>Agent Harness、工具调用、模型后训练、权限与安全——这些是 AI 产品的长期底座。</p></div>
+    </div>
+
+    <div class="sec-head rv" style="margin-top:64px;margin-bottom:24px">
+      <h2 style="font-size:clamp(20px,2.4vw,28px)">我们在找这样的人</h2>
+    </div>
+    <div class="grid4">
+      <div class="card rv"><p>对大模型、Agent、搜索、多模态、强化学习、系统工程或 AI 安全，有<b>持续的兴趣</b>。</p></div>
+      <div class="card rv d1"><p>愿意把抽象算法问题放进真实业务里验证，在意效果、稳定性、成本和用户体验。</p></div>
+      <div class="card rv d2"><p>能在不确定性中<b>定义问题、设计实验、分析失败</b>，与不同角色协同推进。</p></div>
+      <div class="card rv d3"><p>希望自己的工作既有研究深度，也能变成全球用户真正在用的产品能力。</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="teeth"></div>
+
+<!-- 六、论文与开源 -->
+<section id="research" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">06 · RESEARCH & OPEN SOURCE</span>
+      <h2>我们写论文，也做开源</h2>
+      <p class="lead">技术结果不只是离线分数，也可以是一篇论文、一个仓库。下面是团队近期的一部分工作。</p>
+    </div>
+
+    <div class="oss">
+      <div class="card rv"><h3><svg class="px-ic" data-px="stack"></svg>开源项目 · Dressage</h3><p>Accio-Lab 开源作品。</p><p style="margin-top:8px"><a class="tag" href="https://github.com/Accio-Lab/Dressage" target="_blank">github.com/Accio-Lab/Dressage ↗</a></p></div>
+      <div class="card rv d1"><h3><svg class="px-ic" data-px="globe"></svg>开源项目 · Occamy</h3><p>团队开源作品。</p><p style="margin-top:8px"><a class="tag" href="https://occamy-ai.github.io/" target="_blank">occamy-ai.github.io ↗</a></p></div>
+    </div>
+
+    <div class="papers">
+      <div class="paper rv"><span class="t">PAPER</span><div><h4>JADE: Expert-Grounded Dynamic Evaluation for Open-Ended Professional Tasks</h4><a href="https://arxiv.org/abs/2602.06486" target="_blank">arXiv:2602.06486 ↗</a></div></div>
+      <div class="paper rv d1"><span class="t">PAPER</span><div><h4>EvoC2F: Compiling Tool Orchestration for Efficient and Evolvable LLM Agents</h4><a href="https://openreview.net/forum?id=ZSGB91kMOG" target="_blank">OpenReview ↗</a></div></div>
+      <div class="paper rv"><span class="t">PAPER</span><div><h4>Act Wisely: Cultivating Meta-Cognitive Tool Use in Agentic Multimodal Models</h4><a href="https://arxiv.org/abs/2604.08545" target="_blank">arXiv:2604.08545 ↗</a></div></div>
+      <div class="paper rv d1"><span class="t">PAPER</span><div><h4>MM-CondChain: A Programmatically Verified Benchmark for Visually Grounded Deep Compositional Reasoning</h4><a href="https://arxiv.org/abs/2603.12266" target="_blank">arXiv:2603.12266 ↗</a></div></div>
+      <div class="paper rv"><span class="t">PAPER</span><div><h4>Beyond Scattered Acceptance: Fast and Coherent Inference for DLMs via Longest Stable Prefixes</h4><a href="https://arxiv.org/abs/2603.05454" target="_blank">arXiv:2603.05454 ↗</a></div></div>
+      <div class="paper rv d1"><span class="t">PAPER</span><div><h4>SwimBird: Eliciting Switchable Reasoning Mode in Hybrid Autoregressive MLLMs</h4><a href="https://arxiv.org/abs/2602.06040" target="_blank">arXiv:2602.06040 ↗</a></div></div>
+      <div class="paper rv"><span class="t">PAPER</span><div><h4>You Only Forward Once: An Efficient Compositional Judging Paradigm</h4><a href="https://arxiv.org/abs/2511.16600" target="_blank">arXiv:2511.16600 ↗</a></div></div>
+      <div class="paper rv d1"><span class="t">PAPER</span><div><h4>CrossLMM: Decoupling Long Video Sequences from LMMs via Dual Cross-Attention Mechanisms</h4><a href="https://arxiv.org/abs/2505.17020" target="_blank">arXiv:2505.17020 ↗</a></div></div>
+      <div class="paper rv"><span class="t">PAPER</span><div><h4>Hybrid Reward Normalization for Process-supervised Non-verifiable Agentic Tasks</h4><a href="https://arxiv.org/abs/2509.25598" target="_blank">arXiv:2509.25598 ↗</a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 七、在招岗位 -->
+<section id="jobs">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">07 · JOIN US</span>
+      <h2>五个席位，虚位以待</h2>
+      <p class="lead">如果你希望把 AI 从“会聊天”推进到“会研究、会调用工具、会执行复杂任务”，Accio 提供的是一个同时具备<b>全球 B2B 业务复杂度、AI Native 产品场景、前沿模型技术和真实商业反馈</b>的研发环境。点击岗位直达官网投递页。</p>
+    </div>
+
+    <a class="job rv" href="https://aidc-jobs.alibaba.com/off-campus/position-detail?lang=zh&positionId=100023695010" target="_blank"><span class="idx">01</span><span class="tag gold">AI Infra</span><h3>AI Infra 大模型训练 / 分布式训练工程师（后训练 / RL）- Accio Work</h3><span class="go">投递 →</span></a>
+    <a class="job rv" href="https://aidc-jobs.alibaba.com/off-campus/position-detail?lang=zh&positionId=100021035003" target="_blank"><span class="idx">02</span><span class="tag">Agent 模型</span><h3>Agent 模型算法工程师 / 专家 - Accio</h3><span class="go">投递 →</span></a>
+    <a class="job rv" href="https://aidc-jobs.alibaba.com/off-campus/position-detail?lang=zh&positionId=100002875005" target="_blank"><span class="idx">03</span><span class="tag sky">Agent 开发 · 杭州</span><h3>AI Agent 开发工程师 / 专家 - Accio - 杭州</h3><span class="go">投递 →</span></a>
+    <a class="job rv" href="https://aidc-jobs.alibaba.com/off-campus/position-detail?lang=zh&positionId=100012355025" target="_blank"><span class="idx">04</span><span class="tag gold">后训练</span><h3>Agent 后训练算法工程师 / 专家 - Accio Work</h3><span class="go">投递 →</span></a>
+    <a class="job rv" href="https://aidc-jobs.alibaba.com/off-campus/position-detail?lang=zh&positionId=100022915005" target="_blank"><span class="idx">05</span><span class="tag">Agent 算法</span><h3>Agent 算法工程师 / 专家 - Accio</h3><span class="go">投递 →</span></a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="eyebrow" style="justify-content:center">PRESS START</span>
+    <h2 class="rv">蓝海我们已经先迈进来一步，<br>剩下的故事，等你一起写。</h2>
+    <p class="sub rv d1">让 AI 真正参与全球生意与复杂工作执行 —— 这件事，值得你押上下一段职业旅程。</p>
+    <div class="cta-row rv d2" style="justify-content:center">
+      <a class="btn btn-mint" href="#jobs">查看在招岗位</a>
+      <a class="btn btn-ghost" href="https://www.accio.com/work" target="_blank">访问 Accio 官网 ↗</a>
+    </div>
+    <p class="fine">Accio · 阿里国际站 AI Team ｜ 本页内容基于 Accio 招聘说明文档 · 仅供招聘宣传使用 ｜ <a href="https://www.accio.com" target="_blank">www.accio.com</a></p>
+  </div>
+</footer>
+
+<script>
+/* ---------- 像素图标渲染 ---------- */
+const PX = {
+  star:["...G....","..GGG...","GGGGGGGG",".GGGGGG.","..GGGG..",".GG..GG.","G......G","........"],
+  globe:["..BBBB..",".BMMBBB.","BMMBBBBB","BBMMMBBB","BBMMMBBB","BBBBMMBB",".BBBBBB.","..BBBB.."],
+  chip:["M..M..M.",".MMMMMM.",".M....M.","MM.WW.MM","MM.WW.MM",".M....M.",".MMMMMM.","M..M..M."],
+  shield:[".MMMMMM.","M......M","M..GG..M","M..GG..M","M......M",".M....M.","..MMMM..","........"],
+  search:[".WWWW...","W....W..","W....W..","W....W..",".WWWW...","....MM..",".....MM.","......MM"],
+  img:["BBBBBBBB","B.....GB","B....GGB","B..M...B","B.MMM..B","BMMMMMMB","BBBBBBBB","........"],
+  bolt:["...MMMM.","..MMM...",".MMMMM..","...MM...","..MM....",".MM.....",".M......","........"],
+  stack:["........","..MMMM..",".MMMMMM.","MMMMMMMM","........",".GGGGGG.","GGGGGGGG","........"],
+  robot:["..G.G...",".BBBBBB.",".BMMMMB.",".BMMMMB.",".BBBBBB.","..B..B..",".BB..BB.","........"],
+  tool:[".GG..GG.",".GGGGGG.","..GGGG..","..GG....","..GG....","..GG....",".GGGG...","........"],
+  shop:["GGGGGGGG","G.G..G.G",".MMMMMM.",".M....M.",".M.GG.M.",".M.GG.M.",".M....M.",".MMMMMM."],
+  loop:["..MMMM..",".M....M.","M..GG..M","M......M","M..GG..M",".M....M.","..MMMM..","........"]
+};
+const PXC = {M:"#2ce5a7",G:"#ffcf5c",B:"#4d8dff",W:"#eef7f2"};
+document.querySelectorAll("[data-px]").forEach(sv=>{
+  const map = PX[sv.dataset.px]; if(!map) return;
+  sv.setAttribute("viewBox","0 0 8 8");
+  sv.setAttribute("shape-rendering","crispEdges");
+  let r="";
+  map.forEach((row,y)=>{ [...row].forEach((c,x)=>{ if(PXC[c]) r+=`<rect x="${x}" y="${y}" width="1" height="1" fill="${PXC[c]}"/>`; }); });
+  sv.innerHTML = r;
+});
+
+/* ---------- 终端打字机 ---------- */
+const LINES = [
+  ['$ accio.run("帮我找 5 家值得谈判的供应商")',"mint"],
+  ["▸ 检索 10 亿+ 商品 … OK","dim"],
+  ["▸ 比对 7 种语言报价 … OK","dim"],
+  ["▸ 生成比较表与谈判建议 … OK","dim"],
+  ["✦ 报告就绪，老板请查收","gold"]
+];
+const term = document.getElementById("term");
+let li=0, ci=0, buf="";
+function tick(){
+  if(li>=LINES.length){ term.innerHTML = buf + '<span class="cursor"></span>'; return; }
+  const [txt,cls] = LINES[li];
+  ci++;
+  const cur = buf + `<span class="${cls}">${txt.slice(0,ci)}</span><span class="cursor"></span>`;
+  term.innerHTML = cur;
+  if(ci>=txt.length){ buf += `<span class="${cls}">${txt}</span>\n`; li++; ci=0; setTimeout(tick, 320); }
+  else setTimeout(tick, 26 + Math.random()*40);
+}
+setTimeout(tick, 800);
+
+/* ---------- 数字滚动 ---------- */
+function countUp(el){
+  const n = +el.dataset.n, t0 = performance.now(), dur = 1400;
+  function f(t){ const p = Math.min((t-t0)/dur,1), e = 1-Math.pow(1-p,3);
+    el.textContent = Math.round(n*e).toLocaleString();
+    if(p<1) requestAnimationFrame(f); }
+  requestAnimationFrame(f);
+}
+
+/* ---------- 滚动显现 ---------- */
+const io = new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("on");
+    e.target.querySelectorAll("[data-n]").forEach(countUp);
+    if(e.target.hasAttribute("data-n")) countUp(e.target);
+    io.unobserve(e.target); } });
+},{threshold:.15});
+document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+
+/* ---------- 跑马灯内容翻倍 ---------- */
+const mq = document.getElementById("mq");
+mq.innerHTML += mq.innerHTML;
+</script>
+</body>
+</html>
